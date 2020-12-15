@@ -22,7 +22,7 @@ SELECT * FROM Customers where Country='USA' and PostalCode like '8%';
 
 問題：至 [JSONLint](https://jsonlint.com/)，寫一個 JSON 文件，物件內容為: {"aiotid": 1,"description": "temperature", "value":23.5}，點選 Validate JSON，檢查正確性。
 
-```
+```js
 {
 	"aiotid": 1,
 	"description": "temperature",
