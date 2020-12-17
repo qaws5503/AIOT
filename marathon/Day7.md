@@ -82,6 +82,16 @@ db.member.find().pretty()
 
 ![image4](https://github.com/qaws5503/AIOT/blob/master/pictures/Day7-2.4.png)
 
+## Mongo shell 操作補充
+
+![command](https://github.com/qaws5503/AIOT/blob/master/pictures/Day7-mongo%20shell%20command.png)
+
+* db → 查看現在在哪個資料庫
+* db.stats → 查看目前這個資料庫的詳細資訊
+* show dbs → 查看有多少個資料庫在這個 server 上
+* show collections → 查看這個資料庫有多少集合
+* db.version → 查看資料庫的版本
+
 ## 補坑
 補充一個坑如果資料庫創建資料庫時顯示
 
