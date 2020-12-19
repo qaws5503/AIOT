@@ -28,6 +28,15 @@
 
 ![image5](https://github.com/qaws5503/AIOT/blob/master/pictures/Day11-3.1.png)
 
+## 設定遠端連線
+
+選取左上角的選項
+
+```
+Menu(選項)->Preference(偏好設定)->Raspberry Pi設定
+->Interfaces(介面)->VNC->Enabled(啟用)
+```
+
 ## 踩坑
 
 如果使用 VNC 遠端連線 Raspberry PI 時出現Cannot Currently Show the Desktop 的字樣，就代表沒有設定預設要顯示的螢幕尺寸大小。可以透過以下指令設定
@@ -36,5 +45,10 @@
 $ sudo raspi-config
 ```
 
-進入設定後選擇 Display Options -> Resolution -> change to any selection except default.
+進入設定後選擇
+
+```
+Display Options->Resolution->change to any
+selection except default.
+```
 
