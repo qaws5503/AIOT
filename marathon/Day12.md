@@ -62,6 +62,6 @@ $ sudo tar zxvf opt.tar.gz
 * cp aiot /tmp：將名稱包含aiot的檔案複製到 /tmp 底下
 * chmod 755 *：將目錄內所有檔案權限設定為 +rwxr-xr-x
 * rm aiot：將名稱包含 aiot 檔案刪除 (要小心，刪除無法復原)
- * rm -r /aiot 刪除整個資料夾
+	* rm -r /aiot 刪除整個資料夾
 * uptime：目前系統從開機到現在已經經過多久的時間 (這可以觀察是否 pi 運作的過程中，是否有不穩定重開機的現象)
 * top：系統運作的狀態，可以觀察記憶體與 cpu 的使用量s
