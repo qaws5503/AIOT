@@ -9,7 +9,7 @@ $ sudo raspi-config
 ```
 
 ```
-Interface Options->SSHD
+Interface Options->SSH
 ```
 
 ![image1](https://github.com/qaws5503/AIOT/blob/master/pictures/Day12-1.1.png)
