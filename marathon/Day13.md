@@ -2,7 +2,7 @@
 
 ## Raspberry PI 接腳圖
 
-![image1](https://github.com/qaws5503/AIOT/blob/master/pictures/RaspberryPI_pin.png)
+![image1](https://github.com/qaws5503/AIOT/blob/master/pictures/RaspberryPI_pin.png "圖片取自 Cupoy 課程")
 
 * PI 共有 40 隻接腳
 * 5V PWR：5V 輸出 (2 個)
