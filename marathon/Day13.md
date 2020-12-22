@@ -109,3 +109,7 @@ Interface Options->SPI->Enable
 看出 gpio7 和 gpio8 已經被佔用了，嘗試去寫入這兩個腳位會報錯
 
 ![image10](https://github.com/qaws5503/AIOT/blob/master/pictures/Day13-3.2.png)
+
+## 補充
+
+控制 gpio 應使用`$ sudo su`指令來進入超級管理員，如此上面的指令就不需要打 sudo 了，也會有完整的權限
