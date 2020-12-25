@@ -47,29 +47,21 @@ pin_list = [relay_pin1, relay_pin2, relay_pin3, relay_pin4)
 GPIO.setmode(GPIO.BCM)
 for now_pin in pin_list:
 	GPIO.setup(now_pin, GPIO.OUT)
-	GPIO.output(now_pin), 1)
+	GPIO.output(now_pin, 1)
+
+relay_list = [relay1, relay2, relay3, relay4]
 
 try:
 	while True:
-		GPIO.output(relay_pin1, 0)
-		sleep(1)
-		GPIO.output(relay_pin2,0)
-		sleep(1)
-		GPIO.output(relay_pin3, 0)
-		sleep(1)
-		GPIO.output(relay_pin4,0)
-		sleep(1)
-		GPIO.output(relay_pin1, 1)
-		sleep(1)
-		GPIO.output(relay_pin2,1)
-		sleep(1)
-		GPIO.output(relay_pin3, 1)
-		sleep(1)
-		GPIO.output(relay_pin4,1)
-		sleep(1)
-	except KeyboardInterrupt:
-		pass
-		GPIO.cleanup()
+		for now_relay in relay_list:
+			GPIO.output(now_relay, 0)
+			sleep(1)
+		for now_relay in relay_list:
+			GPIO.output(now_relay, 1)
+			sleep(1)
+except KeyboardInterrupt:
+	pass
+	GPIO.cleanup()
 ```
 
 GPIOZero:
@@ -86,36 +78,28 @@ relay_pin2 = 19
 relay_pin3 = 13
 relay_pin4 = 6
 
-relay1 = gpio.zero.OutputDevice(eval(relay_pin1),active_high=False, initial_value=False)
-relay2 = gpio.zero.OutputDevice(eval(relay_pin2),active_high=False, initial_value=False)
-relay3 = gpio.zero.OutputDevice(eval(relay_pin3),active_high=False, initial_value=False)
-relay4 = gpio.zero.OutputDevice(eval(relay_pin4),active_high=False, initial_value=False)
+relay1 = gpio.zero.OutputDevice(relay_pin1,active_high=False, initial_value=False)
+relay2 = gpio.zero.OutputDevice(relay_pin2,active_high=False, initial_value=False)
+relay3 = gpio.zero.OutputDevice(relay_pin3,active_high=False, initial_value=False)
+relay4 = gpio.zero.OutputDevice(relay_pin4,active_high=False, initial_value=False)
+
+relay_list = [relay1, relay2, relay3, relay4]
 
 try:
 	while True:
-	relay1.off()
-	sleep(1)
-	relay2.off()
-	sleep(1)
-	relay3.off()
-	sleep(1)
-	relay4.off()
-	sleep(1)
-	relay1.on()
-	sleep(1)
-	relay2.on()
-	sleep(1)
-	relay3.on()
-	sleep(1)
-	relay4.on()
-	sleep(1)
+		for now_relay in relay_list:
+			now_relay.off()
+			sleep(1)
+		for now_relay in relay_list:
+			now_relay.on()
+			sleep(1)
 	
-	except KeyboardInterrupt:
-		set_relay1.off()
-		set_relay2.off()
-		set_relay3.off()
-		set_relay4.off()
-		sys.exit(0)
+except KeyboardInterrupt:
+	set_relay1.off()
+	set_relay2.off()
+	set_relay3.off()
+	set_relay4.off()
+	sys.exit(0)
 ```
 
 ## 作業三
