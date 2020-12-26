@@ -13,8 +13,8 @@
 [D06 SQL &amp; NOSQL 資料庫介紹](https://github.com/qaws5503/AIOT/blob/master/marathon/Day06.md)  
 [D07 MongoDB 大數據資料庫介紹與安裝實作](https://github.com/qaws5503/AIOT/blob/master/marathon/Day07.md)  
 [D08 Python 存取 MongoDB 常用指令與程式教學](https://github.com/qaws5503/AIOT/blob/master/marathon/Day08.md)  
-[D09 Docker 軟體容器平台介紹與安裝使用](https://github.com/qaws5503/AIOT/blob/master/marathon/Day09.md)  
-[D10 使用 Docker 安裝 MongoDB](https://github.com/qaws5503/AIOT/blob/master/marathon/Day10.md)  
+D09 Docker 軟體容器平台介紹與安裝使用
+D10 使用 Docker 安裝 MongoDB
 [D11 Raspberry PI(樹莓派) 簡介與 OS 燒錄 ](https://github.com/qaws5503/AIOT/blob/master/marathon/Day11.md)  
 [D12 Linux 常用指令教學](https://github.com/qaws5503/AIOT/blob/master/marathon/Day12.md)  
 [D13 Raspberry PI 之接腳介紹與 GPIO 教學](https://github.com/qaws5503/AIOT/blob/master/marathon/Day13.md)  
@@ -33,4 +33,4 @@
 [D26 透過 Flask 將訊息從樹梅派傳送給 PC](https://github.com/qaws5503/AIOT/blob/master/marathon/Day26.md)  
 [D27 將 Raspberry Pi 的 YOLO 資料集預測結果傳送至 PC](https://github.com/qaws5503/AIOT/blob/master/marathon/Day27.md)  
 [D28 設計一個影像與辨識結果的資料庫](https://github.com/qaws5503/AIOT/blob/master/marathon/Day28.md)  
-[D29 使用 Webcam 拍照並以 YOLO 辨識資料庫儲存的結果](https://github.com/qaws5503/AIOT/blob/master/marathon/Day29.md)  
+[D29 使用 Webcam 拍照並以 YOLO 辨識資料庫儲存的結果](https://github.com/qaws5503/AIOT/blob/master/marathon/Day29.md)
