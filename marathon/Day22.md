@@ -56,4 +56,4 @@ hello echo
 更改 classes 時 filters 看似要遵守 **( 5 + class numbers ) * 3**  
 因此這個案例 filters 需要更改為 24
 
-![image1](https://github.com/qaws5503/AIOT/blob/master/pictures/Day22-4.1png)
+![image1](https://github.com/qaws5503/AIOT/blob/master/pictures/Day22-4.1.png)
