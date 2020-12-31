@@ -8,7 +8,15 @@ YOLO 模型總共幾個重要的檔案
 * yolov3_training_last.weights 訓練出來的模型權重
 * yolov3_training.cfg 模型架構設定
 
-使用`$ tree`印出我的檔案目錄：
+最開始要先安裝 YOLO
+
+```
+$ git clone https://github.com/AlexeyAB/darknet
+$ cd darknet
+$ make
+```
+
+安裝後使用`$ tree`印出我的檔案目錄：
 
 ```
 yolo
@@ -21,7 +29,7 @@ yolo
 └── yolov3_training_last.weights
 ```
 
-因此首先要將幾個重要的檔案複製進去 YOLO 的模型內
+接著要將幾個重要的檔案複製進去 YOLO 的模型內
 
 ```
 $ cd ~/Desktop/yolo
