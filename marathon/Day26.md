@@ -16,7 +16,7 @@ $ pip3 install flask
 
 可以先建立一個簡單的 web，host 記得要更改為 Raspberry PI 的 ip
 
-```
+```python3
 from flask import Flask
 app = Flask(__name__)
 @app.route("/")
@@ -58,7 +58,7 @@ $ conda install requests
 
 執行 Day26.py 的檔案
 
-```
+```python3
 import requests
 r = requests.get('http://10.17.4.132:8080')
 if r.status_code == requests.codes.ok:
