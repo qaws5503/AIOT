@@ -24,7 +24,7 @@ D10 使用 Docker 安裝 MongoDB
 [D17 使用 Docker 架設 Flask Web Server](https://github.com/qaws5503/AIOT/blob/master/marathon/Day17.md)  
 [D18 使用 Python 開發 Flask 網頁程式](https://github.com/qaws5503/AIOT/blob/master/marathon/Day18.md)  
 [D19 撰寫 Flask Web 程式存取 MongoDB](https://github.com/qaws5503/AIOT/blob/master/marathon/Day19.md)  
-[D20 在 Raspberry PI 上安裝 Flask Web Server ](https://github.com/qaws5503/AIOT/blob/master/marathon/Day20.md)  
+[D20 在 Raspberry PI 上使用 Remote VScode 安裝 Flask Web Server](https://github.com/qaws5503/AIOT/blob/master/marathon/Day20.md)  
 [D21 YOLO 目標檢測框架介紹](https://github.com/qaws5503/AIOT/blob/master/marathon/Day21.md)  
 [D22 使用 YOLOV3 訓練人臉識別](https://github.com/qaws5503/AIOT/blob/master/marathon/Day22.md)  
 [D23 在 Raspberry Pi 上使用 YOLO 已訓練好的模型](https://github.com/qaws5503/AIOT/blob/master/marathon/Day23.md)  
