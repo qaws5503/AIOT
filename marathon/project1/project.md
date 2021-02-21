@@ -150,7 +150,7 @@ $ python3 darknet_images.py \--weights /opt/mask_50/tiny_weights/yolov3-tiny_880
 
 觀察可以發現不會有輸出影像，可以透過更改 darknet_image.py 最底下的程式碼
 
-![darknet](darknet_image.png)
+![darknet](https://github.com/qaws5503/AIOT/blob/master/pictures/project1/darknet_image.png)
 
 ## 在 pi 上架設 Flask API
 
@@ -212,7 +212,7 @@ $ ifconfig -a
 * eth0：有線網路
 * wlan0：無線網路
 
-![ifconfig](ifconfig.png)
+![ifconfig](https://github.com/qaws5503/AIOT/blob/master/pictures/project1/ifconfig.png)
 
 ### 設定 DNS
 
@@ -228,7 +228,7 @@ $ sudo nano /etc/hosts
 
 在同網域下打入 http://192.168.2.201:5000/list 會看到空白的 list 代表 API 有連接成功
 
-![API](API_result)
+![API](https://github.com/qaws5503/AIOT/blob/master/pictures/project1/API_result.png)
 
 ## 辨識程式
 
