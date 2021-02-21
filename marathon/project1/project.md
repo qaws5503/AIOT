@@ -266,7 +266,7 @@ def webcam_detect():
 	cap.release()
 ```
 
-* cv2.waitkey(t): 代表等待 t 秒後關閉，如 t=0 則為永不關閉
+* cv2.waitkey(t): 代表等待 t 豪秒後關閉，如 t=0 則為永不關閉
 * key = 27 代表在 cv2.waitkey 期間按下 esc
 
 ### 執行辨識程式
