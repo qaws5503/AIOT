@@ -155,18 +155,6 @@ $ python3 darknet_images.py \--weights /opt/mask_50/tiny_weights/yolov3-tiny_880
 ## 在 pi 上架設 Flask API
 
 ```python3
-from flask import Flask, request
-from flask import send_file
-from datetime import datetime
-import requests
-import os
-import glob
-import json
-
-list=[]
-
-app = Flask(__name__)
-
 @app.route('/postLabel', methods=['POST'])
 def postLabel():
     content = request.json
@@ -248,79 +236,19 @@ $ sudo nano /etc/hosts
 
 使用 webcam_mask.py
 
-```python3
-def load_yolo():
-	net = cv2.dnn.readNet("/opt/mask_50/tiny_weights/yolov3-tiny_last.weights", "/opt/mask_50/cfg/yolov3-tiny.cfg")
-	classes = []
-	with open("/opt/mask_50/cfg/obj.names", "r") as f:
-		classes = [line.strip() for line in f.readlines()]
+* load_yolo(): 載入模型
+* start_webcam(): 啟動 webcam 攝影機
+* detect_objects(): 將影像輸入神經網路進行預測
+* get_box_dimensions() 將預測機率值超過設定的信賴值的區域取出來。
+	* w: 辨識區域的寬度
+	* h: 辨識區域的高度
+	* X: 辨識區域左上角橫座標
+	* y: 辨識區域左上角直座標
+	* [w,h,x,y] 加入 boxes 陣列
+	* conf: 設定顯示物體的閾值
+* webcam_detect(): 啟動攝影機，開始讀取影像、偵測物體、取得物件預測結果的區域、將預測類別標籤畫在影像上，進入無窮迴圈的狀態，直到程式執行結束為止。
 
-	layers_names = net.getLayerNames()
-	output_layers = [layers_names[i[0]-1] for i in net.getUnconnectedOutLayers()]
-	colors = np.random.uniform(0, 255, size=(len(classes), 3))
-	return net, classes, colors, output_layers
-
-def start_webcam():
-	cap = cv2.VideoCapture(0)
-	return cap
-
-def detect_objects(img, net, outputLayers):			
-	blob = cv2.dnn.blobFromImage(img, scalefactor=0.00392, size=(320, 320), mean=(0, 0, 0), swapRB=True, crop=False)
-	net.setInput(blob)
-	outputs = net.forward(outputLayers)
-	return blob, outputs
-
-def get_box_dimensions(outputs, height, width):
-	boxes = []
-	confs = []
-	class_ids = []
-	for output in outputs:
-		for detect in output:
-			scores = detect[5:]
-			class_id = np.argmax(scores)
-			conf = scores[class_id]
-			
-			if conf > 0.5:
-#				print ("detect:",detect)
-				center_x = int(detect[0] * width)
-				center_y = int(detect[1] * height)
-				
-				w = int(detect[2] * width)
-				h = int(detect[3] * height)
-				x = int(center_x - w/2)
-				y = int(center_y - h / 2)
-				boxes.append([x, y, w, h])
-				confs.append(float(conf))
-				class_ids.append(class_id)
-				
-#				print ("scores:",scores, "class_id:",class_id, "conf:", conf, "center_x:", center_x, "center_y:", center_y, "w:",w,"h:",h,"x:",x,"y:",y)
-	return boxes, confs, class_ids
-			
-def draw_labels(boxes, confs, colors, class_ids, classes, img): 
-	indexes = cv2.dnn.NMSBoxes(boxes, confs, 0.5, 0.0)
-#	print ("indexes: ",indexes)
-	font = cv2.FONT_HERSHEY_PLAIN
-	for i in range(len(boxes)):
-#		print ("i:",i,"draw_labels:\t",i)
-		if i>0:
-			x, y, w, h = boxes[i]
-			label = str(classes[class_ids[i]])
-			conf = confs[i]
-			color = colors[i%3]
-
-			if (y<10):
-				y=y+40
-			cv2.rectangle(img, (x,y), (x+w, y+h), color, 2)
-			cv2.putText(img, label, (x, y - 5), font, 1, color, 1)
-
-			today = date.today()
-			now = datetime.now()
-			imgFileName = str(now).replace(":","_").replace(" ","_")+"_"+label+".jpg"
-			r = requests.post('http://localhost:5000/postLabel', json={"label":label,"x":x,"y":y,"w":w, "h":h, "img":imgFileName})
-			
-			print("now:", now, "conf:", conf, "label:", label, "x:",x, "y:",y, "w:",w, "h:",h, "img:", imgFileName)
-			cv2.imwrite(imgFileName, img)
-
+```
 def webcam_detect():
 	model, classes, colors, output_layers = load_yolo()
 	cap = start_webcam()
@@ -338,18 +266,8 @@ def webcam_detect():
 	cap.release()
 ```
 
-* load_yolo(): 載入模型
-* start_webcam(): 啟動 webcam 攝影機
-* detect_objects(): 將影像輸入神經網路進行預測
-* get_box_dimensions() 將預測機率值超過設定的信賴值的區域取出來。
-	* w: 辨識區域的寬度
-	* h: 辨識區域的高度
-	* X: 辨識區域左上角橫座標
-	* y: 辨識區域左上角直座標
-	* [w,h,x,y] 加入 boxes 陣列
-	* conf 加入 confs 陣列中
-	* 將 class_id 辨識種類加入 class_ids 的陣列中
-* webcam_detect(): 啟動攝影機，開始讀取影像、偵測物體、取得物件預測結果的區域、將預測類別標籤畫在影像上，進入無窮迴圈的狀態，直到程式執行結束為止。
+* cv2.waitkey(t): 代表等待 t 秒後關閉，如 t=0 則為永不關閉
+* key = 27 代表在 cv2.waitkey 期間按下 esc
 
 ### 執行辨識程式
 
