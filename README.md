@@ -8,6 +8,8 @@
 
 ### 架構
 
+![overview](https://github.com/qaws5503/AIOT/blob/master/pictures/overview.png)
+
 ### 使用的技術
 
 * 前端
