@@ -1,9 +1,29 @@
 # AIOT
-2020/12/10 ~ 2020/01/31 AIOT marathon
 
-## 成果
+## Project1 支援口罩辨識的智慧門禁系統
+
+### 目的
+
+辨識人是否有戴口罩，並且將結果顯示於網頁上。
+
+### 架構
+
+### 使用的技術
+
+* 前端
+	* Flask 製作網頁
+* 後端
+	* Flask 製作 API 將邊緣資料傳上 cloud
+	* MongoDB 操作
+* 邊緣運算
+	* Raspberry PI 搭配 sensor 蒐集 data
+	* Yolo 影像辨識
+
+## Project2
 
 ## 目錄
+
+### 2020/12/10 ~ 2020/01/31 AIOT marathon
 
 [D01 AIOT 人工智慧物聯網介紹](https://github.com/qaws5503/AIOT/blob/master/marathon/Day01.md)  
 [D02 感測器介紹](https://github.com/qaws5503/AIOT/blob/master/marathon/Day02.md)  
